@@ -66,7 +66,7 @@ const HARDWARE_PROJECTS = [
     id: 'h3', title: 'Gesture Wheelchair',
     desc: 'Developed hardware logic for Arduino-based prototypes, including IR-sensor traffic optimizers and embedded wheelchair navigation.',
     tags: ['Arduino', 'Embedded', 'IR Sensors'],
-    colSpan: 'md:col-span-3 lg:col-span-3',
+    colSpan: 'md:col-span-1 lg:col-span-2',
     link: '#'
   },
 ];
@@ -78,7 +78,7 @@ const ProjectCard = ({ proj, index }: { proj: any, index: number }) => (
     rel="noopener noreferrer"
     initial={{ opacity: 0, scale: 0.95, y: 30 }}
     whileInView={{ opacity: 1, scale: 1, y: 0 }}
-    viewport={{ once: false, margin: "-100px" }}
+    viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.6, delay: index * 0.1 }}
     className={`group glass-panel flex flex-col h-full relative overflow-hidden cursor-pointer ${proj.colSpan}`}
   >
@@ -115,7 +115,7 @@ export const Projects = () => {
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="section-heading text-center mb-16"
         >
@@ -132,7 +132,7 @@ export const Projects = () => {
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="section-heading text-center mb-16"
         >
@@ -148,7 +148,7 @@ export const Projects = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-20 flex justify-center"
         >
