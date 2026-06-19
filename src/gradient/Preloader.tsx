@@ -21,34 +21,40 @@ const FONTS = [
   "'Garamond', serif",
   "Arial, sans-serif",
   "'Outfit', sans-serif",
-  "'Outfit', sans-serif", // Hold on final premium font
+  "'Outfit', sans-serif",
 ];
 
 export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    let timer: number;
+    let completeTimer: number;
+
     if (index < FONTS.length - 1) {
-      const timer = setTimeout(() => {
-        setIndex(index + 1);
-      }, 100); // 100ms rapid rapid change
-      return () => clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        setIndex((prev) => Math.min(prev + 1, FONTS.length - 1));
+      }, 100);
     } else {
-      const completeTimer = setTimeout(() => {
+      completeTimer = window.setTimeout(() => {
         onComplete();
-      }, 800); // Hold the final font for 0.8s
-      return () => clearTimeout(completeTimer);
+      }, 800);
     }
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(completeTimer);
+    };
   }, [index, onComplete]);
 
-  const currentFont = FONTS[index];
-  const isTailwind = currentFont.startsWith('font-');
+  const currentFont = FONTS[index] || "'Outfit', sans-serif";
+  const isTailwind = typeof currentFont === 'string' && currentFont.startsWith('font-');
 
   return (
     <motion.div 
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-[var(--bg-color)]"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-[var(--bg-color)]"
       initial={{ y: 0 }}
-      exit={{ y: "-100%", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }}
+      exit={{ y: "-100%", transition: { duration: 0.8, ease: "easeInOut" } }}
     >
       <div 
         className={`text-4xl md:text-6xl text-[var(--text-main)] tracking-tight ${isTailwind ? currentFont : ''}`}
