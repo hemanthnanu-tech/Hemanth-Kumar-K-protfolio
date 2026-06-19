@@ -58,7 +58,7 @@ export const Hero = () => {
           <a href="#portfolio" className="btn-hero text-[14px]">
             View Portfolio
           </a>
-          <a href="#project" className="btn-hero-outline text-[14px]">
+          <a href="#contact" className="btn-hero-outline text-[14px]">
             Start A Project
           </a>
         </motion.div>
