@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Layers, Cpu, Code2, Factory, Zap } from 'lucide-react';
+import React from 'react';
+import { motion } from 'motion/react';
+import { Code2 } from 'lucide-react';
 
-// Using Devicons for colorful logos where available
 const getLogo = (name: string) => {
   const map: Record<string, string> = {
     'C': 'c/c-original.svg',
@@ -25,97 +24,100 @@ const getLogo = (name: string) => {
   return null;
 };
 
-const SKILLS = [
-  { cat: 'Core Competencies', icon: <Layers size={20} />, items: ['System Architecture', 'Rapid Prototyping', 'UI/UX Conceptualization', 'Technical Ideation', 'AI-Assisted Workflows'] },
-  { cat: 'Hardware & Embedded', icon: <Cpu size={20} />, items: ['PCB Design', 'Arduino', 'IoT Data Acquisition', 'Sensor Integration', 'Circuit Assembly'] },
-  { cat: 'Programming', icon: <Code2 size={20} />, items: ['C', 'C++', 'Python', 'JavaScript', 'TypeScript', 'Verilog'] },
-  { cat: 'Industrial Automation', icon: <Factory size={20} />, items: ['PLC Programming', 'SCADA Systems', 'HMI Interfaces', 'TIA Portal', 'Ladder Logic'] },
-  { cat: 'Software & Tools', icon: <Zap size={20} />, items: ['React', 'Tailwind CSS', 'HTML5', 'Android Studio', 'Git', 'VS Code'] },
-];
+const ROW_1 = ['C', 'C++', 'Python', 'JavaScript', 'TypeScript', 'Verilog', 'System Architecture', 'Rapid Prototyping'];
+const ROW_2 = ['PCB Design', 'Arduino', 'IoT Data Acquisition', 'Sensor Integration', 'Circuit Assembly', 'UI/UX Conceptualization', 'Technical Ideation'];
+const ROW_3 = ['PLC Programming', 'SCADA Systems', 'HMI Interfaces', 'TIA Portal', 'Ladder Logic', 'React', 'Tailwind CSS', 'HTML5', 'Android Studio', 'Git', 'VS Code'];
+
+const MarqueeRow = ({ items, reverse = false, speed = 40 }: { items: string[], reverse?: boolean, speed?: number }) => {
+  return (
+    <div className="flex w-full overflow-hidden relative py-4 group">
+      {/* Fade edges */}
+      <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[var(--bg-color)] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[var(--bg-color)] to-transparent z-10 pointer-events-none" />
+      
+      <div 
+        className="flex min-w-full shrink-0 items-center justify-around gap-6 px-3"
+        style={{
+          animation: `marquee-${reverse ? 'right' : 'left'} ${speed}s linear infinite`,
+        }}
+      >
+        {items.map((item, idx) => {
+          const logo = getLogo(item);
+          return (
+            <div key={`${item}-${idx}`} className="flex items-center gap-4 px-6 py-4 glass-panel hover:border-[var(--accent)] hover:shadow-lg transition-all duration-300 rounded-2xl whitespace-nowrap">
+              {logo ? (
+                <img src={logo} alt={item} className="w-8 h-8 object-contain drop-shadow-sm group-hover:scale-110 transition-transform" />
+              ) : (
+                <div className="w-8 h-8 flex items-center justify-center text-[var(--accent)] group-hover:scale-110 transition-transform">
+                  <Code2 size={24} />
+                </div>
+              )}
+              <span className="font-display font-medium text-lg tracking-tight text-[var(--text-main)]">{item}</span>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Duplicate for seamless looping */}
+      <div 
+        className="flex min-w-full shrink-0 items-center justify-around gap-6 px-3"
+        style={{
+          animation: `marquee-${reverse ? 'right' : 'left'} ${speed}s linear infinite`,
+        }}
+      >
+        {items.map((item, idx) => {
+          const logo = getLogo(item);
+          return (
+            <div key={`${item}-${idx}-dup`} className="flex items-center gap-4 px-6 py-4 glass-panel hover:border-[var(--accent)] hover:shadow-lg transition-all duration-300 rounded-2xl whitespace-nowrap">
+              {logo ? (
+                <img src={logo} alt={item} className="w-8 h-8 object-contain drop-shadow-sm group-hover:scale-110 transition-transform" />
+              ) : (
+                <div className="w-8 h-8 flex items-center justify-center text-[var(--accent)] group-hover:scale-110 transition-transform">
+                  <Code2 size={24} />
+                </div>
+              )}
+              <span className="font-display font-medium text-lg tracking-tight text-[var(--text-main)]">{item}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 export const Skills = () => {
-  const [activeTab, setActiveTab] = useState(0);
-
   return (
-    <section id="skills" className="relative py-32 px-6 md:px-12 lg:px-20 z-10">
+    <section id="skills" className="relative py-32 overflow-hidden z-10">
       <div className="glow-bg-section" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <style>
+        {`
+          @keyframes marquee-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+          }
+          @keyframes marquee-right {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
+          }
+        `}
+      </style>
+
+      <div className="max-w-[100vw] mx-auto relative z-10">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="section-heading text-center mb-16"
+          className="section-heading text-center mb-20 px-6"
         >
-          Technical Expertise
+          Technical Arsenal
         </motion.h2>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
-          {/* Left Column: Tabs */}
-          <div className="lg:w-1/3 flex flex-col gap-2">
-            {SKILLS.map((skill, index) => {
-              const isActive = activeTab === index;
-              return (
-                <button
-                  key={skill.cat}
-                  onClick={() => setActiveTab(index)}
-                  className={`flex items-center gap-4 px-6 py-4 rounded-xl text-left transition-all duration-300 ${
-                    isActive 
-                      ? 'bg-[var(--accent)] text-[var(--bg-color)] shadow-lg scale-[1.02]' 
-                      : 'glass-panel hover:bg-[var(--btn-bg)] text-[var(--text-main)] hover:scale-[1.01]'
-                  }`}
-                >
-                  <div className={`p-2 rounded-lg ${isActive ? 'bg-[var(--bg-color)] text-[var(--accent)]' : 'bg-[var(--btn-bg)] text-[var(--text-muted)]'}`}>
-                    {skill.icon}
-                  </div>
-                  <span className="font-medium text-[15px]">{skill.cat}</span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Right Column: Skill Grid */}
-          <div className="lg:w-2/3 glass-panel p-8 md:p-12 min-h-[400px] flex items-center justify-center">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTab}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.3 }}
-                className="w-full h-full flex flex-col justify-center"
-              >
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                  {SKILLS[activeTab].items.map((item, idx) => {
-                    const logoUrl = getLogo(item);
-                    return (
-                      <motion.div
-                        key={item}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: idx * 0.05 }}
-                        className="flex flex-col items-center justify-center gap-4 p-6 rounded-2xl bg-[var(--btn-bg)] border border-[var(--panel-border)] hover:border-[var(--accent)] hover:shadow-xl transition-all duration-300 group cursor-pointer"
-                      >
-                        {logoUrl ? (
-                          <div className="w-12 h-12 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-                            <img src={logoUrl} alt={`${item} logo`} className="w-full h-full object-contain filter drop-shadow-md" />
-                          </div>
-                        ) : (
-                          <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[var(--panel-border)] text-[var(--accent)] transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                            <Code2 size={24} />
-                          </div>
-                        )}
-                        <span className="font-medium text-[14px] text-center text-[var(--text-main)] group-hover:text-[var(--accent)] transition-colors">
-                          {item}
-                        </span>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+        <div className="flex flex-col gap-6 -rotate-2 scale-105">
+          <MarqueeRow items={ROW_1} speed={45} />
+          <MarqueeRow items={ROW_2} reverse={true} speed={55} />
+          <MarqueeRow items={ROW_3} speed={40} />
         </div>
       </div>
     </section>
