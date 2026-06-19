@@ -73,12 +73,12 @@ export const About = () => {
                 <p className="text-[13px] text-[var(--text-muted)]">Bachelor of Engineering (B.E.) in Electronics and Communication</p>
               </div>
 
-              <div className="relative pl-6 border-l border-[var(--panel-border)]">
-                <div className="absolute left-[-5px] top-1.5 w-2 h-2 rounded-full bg-[var(--accent)]" />
+              <a href="https://drive.google.com/file/d/1VIYSpFv9SPHlXp0I8akWh-GJlpo3X7GW/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="relative pl-6 border-l border-[var(--panel-border)] block group cursor-pointer">
+                <div className="absolute left-[-5px] top-1.5 w-2 h-2 rounded-full bg-[var(--accent)] group-hover:scale-150 transition-transform" />
                 <div className="text-[12px] text-[var(--text-muted)] font-mono tracking-wider mb-1 uppercase">2023 • Bengaluru</div>
-                <h4 className="text-[16px] font-medium text-[var(--text-main)] mb-0.5">PVP Polytechnic, Dr. AIT Campus</h4>
+                <h4 className="text-[16px] font-medium text-[var(--text-main)] mb-0.5 group-hover:text-[var(--accent)] transition-colors">PVP Polytechnic, Dr. AIT Campus</h4>
                 <p className="text-[13px] text-[var(--text-muted)]">Diploma in Electronics and Communication Engineering</p>
-              </div>
+              </a>
 
               <div className="relative pl-6 border-l border-[var(--panel-border)]">
                 <div className="absolute left-[-5px] top-1.5 w-2 h-2 rounded-full bg-[var(--accent)]" />
