@@ -1,0 +1,121 @@
+import React, { useState } from 'react';
+import { Send, Mail, Phone, Github, MapPin } from 'lucide-react';
+import { motion } from 'motion/react';
+
+export const Contact = () => {
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert('Message sent successfully!');
+    setForm({ name: '', email: '', message: '' });
+  };
+
+  return (
+    <section id="contact" className="relative py-32 px-6 md:px-12 lg:px-20 z-10">
+      <div className="max-w-6xl mx-auto">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="section-heading text-center mb-20"
+        >
+          Get In Touch
+        </motion.h2>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          
+          {/* Left: Contact Info */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex flex-col justify-center"
+          >
+            <h3 className="text-3xl font-medium text-[var(--text-main)] mb-6 tracking-tight">Let's build something extraordinary.</h3>
+            <p className="text-[var(--text-muted)] leading-relaxed mb-12 max-w-md">
+              Whether you have an idea for a project, need a technical consultation, or just want to chat about embedded systems and web tech—I'd love to hear from you.
+            </p>
+
+            <div className="space-y-6">
+              {[
+                { icon: <Mail size={18} />, text: 'hemanth2678nanu@gmail.com', href: 'mailto:hemanth2678nanu@gmail.com' },
+                { icon: <Phone size={18} />, text: '+91 9538520031', href: 'tel:+919538520031' },
+                { icon: <Github size={18} />, text: 'github.com/hemanthnanu-tech', href: 'https://github.com/hemanthnanu-tech' },
+                { icon: <MapPin size={18} />, text: 'Bangalore, Karnataka, India' },
+              ].map((item, i) => (
+                <motion.div 
+                  key={item.text}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
+                >
+                  {item.href ? (
+                    <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className="flex items-center gap-4 text-[var(--text-main)] hover:text-[var(--accent)] transition-colors group w-fit">
+                      <div className="w-12 h-12 rounded-full border border-[var(--panel-border)] bg-[var(--btn-bg)] flex items-center justify-center group-hover:border-[var(--accent)] transition-colors">
+                        {item.icon}
+                      </div>
+                      <span className="font-medium">{item.text}</span>
+                    </a>
+                  ) : (
+                    <div className="flex items-center gap-4 text-[var(--text-main)]">
+                      <div className="w-12 h-12 rounded-full border border-[var(--panel-border)] bg-[var(--btn-bg)] flex items-center justify-center">
+                        {item.icon}
+                      </div>
+                      <span className="font-medium">{item.text}</span>
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Right: Form */}
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="glass-panel"
+          >
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <input 
+                  type="text" 
+                  placeholder="Your Name" 
+                  required 
+                  className="input-glass"
+                  value={form.name}
+                  onChange={e => setForm(p => ({ ...p, name: e.target.value }))}
+                />
+                <input 
+                  type="email" 
+                  placeholder="Email Address" 
+                  required 
+                  className="input-glass"
+                  value={form.email}
+                  onChange={e => setForm(p => ({ ...p, email: e.target.value }))}
+                />
+              </div>
+              <textarea 
+                rows={6} 
+                placeholder="Tell me about your project or inquiry..." 
+                required 
+                className="input-glass resize-none"
+                value={form.message}
+                onChange={e => setForm(p => ({ ...p, message: e.target.value }))}
+              />
+              <button type="submit" className="btn-hero w-full py-4 mt-2 text-[15px]">
+                Send Message <Send size={16} className="ml-2" />
+              </button>
+            </form>
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  );
+};

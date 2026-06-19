@@ -1,0 +1,227 @@
+// ─── COMPLETE PORTFOLIO DATA ─────────────────────────────────────────────────
+
+export const portfolio = {
+  personal: {
+    name: 'HEMANTH KUMAR K',
+    firstName: 'HEMANTH',
+    lastName: 'KUMAR K',
+    titles: [
+      'ELECTRONICS ARCHITECT',
+      'AUTOMATION ENGINEER',
+      'HARDWARE INNOVATOR',
+      'IoT SYSTEMS BUILDER',
+    ],
+    tagline: 'Bridging silicon and software — from bare-metal firmware to intelligent systems.',
+    location: 'Bangalore, Karnataka, India',
+    email: 'hemanth2678nanu@gmail.com',
+    phone: '+91 9538520031',
+    github: 'https://github.com/hemanthnanu-tech',
+    githubLabel: 'github.com/hemanthnanu-tech',
+    summary:
+      'Innovative Electronics and Communication Engineering student bridging hands-on hardware expertise (PCB, PLC, IoT) with modern software development. Strong foundation in system architecture, technical ideation, and UI/UX conceptualization. Adept at leveraging AI-assisted workflows to rapidly prototype and deploy complex web and mobile applications.',
+    stats: [
+      { value: '9+', label: 'Projects Built' },
+      { value: '2',  label: 'Internships' },
+      { value: '5',  label: 'Certifications' },
+      { value: '3+', label: 'Years Exp.' },
+    ],
+  },
+
+  education: [
+    {
+      id: 'edu-1',
+      institution: 'JSS Academy of Technical Education',
+      degree: 'B.E. — Electronics and Communication Engineering',
+      period: '2023–2026',
+      location: 'Bangalore',
+    },
+    {
+      id: 'edu-2',
+      institution: 'PVP Polytechnic, Dr. AIT Campus',
+      degree: 'Diploma — Electronics and Communication Engineering',
+      period: '2023',
+      location: 'Bengaluru',
+    },
+    {
+      id: 'edu-3',
+      institution: 'Vikas Central School',
+      degree: 'Secondary School Leaving Certificate (SSLC)',
+      period: '2020',
+      location: 'Bangalore',
+    },
+  ],
+
+  skills: [
+    {
+      category: 'Core Competencies',
+      icon: 'Brain',
+      items: ['System Architecture', 'Rapid Prototyping', 'UI/UX Conceptualization', 'Technical Ideation', 'AI-Assisted Workflows'],
+    },
+    {
+      category: 'Programming Languages',
+      icon: 'Code2',
+      items: ['C', 'C++', 'Python', 'JavaScript', 'TypeScript', 'Verilog'],
+    },
+    {
+      category: 'Software & Frameworks',
+      icon: 'Layers',
+      items: ['React', 'Tailwind CSS', 'HTML5', 'Android Studio', 'VS Code', 'Git'],
+    },
+    {
+      category: 'Industrial Automation',
+      icon: 'Cog',
+      items: ['PLC Programming', 'SCADA Systems', 'HMI Interfaces', 'TIA Portal', 'Ladder Logic'],
+    },
+    {
+      category: 'Hardware & Embedded',
+      icon: 'Cpu',
+      items: ['PCB Design & Fabrication', 'Arduino / ESP32', 'IoT Data Acquisition', 'Sensor Integration', 'Circuit Assembly'],
+    },
+  ],
+
+  experience: [
+    {
+      id: 'exp-1',
+      company: 'Government Tool Room and Training Centre (GTTC)',
+      role: 'Intern — Industrial Automation',
+      period: 'Feb 2026 – May 2026',
+      location: 'Bangalore',
+      bullets: [
+        'Engineered PLC programs and ladder logic for complex industrial automation processes utilizing TIA Portal.',
+        'Designed and deployed SCADA systems and HMI interfaces to streamline machine control and operator visibility.',
+        'Architected Python-based IoT logic seamlessly integrated with PLC hardware for real-time industrial data monitoring.',
+      ],
+      tags: ['TIA Portal', 'PLC', 'SCADA', 'HMI', 'Python', 'IoT'],
+    },
+    {
+      id: 'exp-2',
+      company: 'Semi-Pro Technology',
+      role: 'Intern — PCB Assembly & Testing',
+      period: 'Mar 2024 – Jun 2024',
+      location: 'Bangalore',
+      bullets: [
+        'Executed precise fabrication, assembly, and soldering of Printed Circuit Boards to strict industry standards.',
+        'Spearheaded component-level testing and troubleshooting of electronic circuits to identify and resolve hardware faults.',
+        'Conducted rigorous quality assurance inspections ensuring high reliability and hardware performance standards.',
+      ],
+      tags: ['PCB Design', 'Soldering', 'Circuit Testing', 'Quality Assurance'],
+    },
+  ],
+
+  projects: [
+    {
+      id: 'proj-1',
+      title: 'Offline AI Assistant',
+      shortDesc: 'Privacy-first AI with zero cloud dependency.',
+      description: 'Engineered a completely offline, locally-executed AI assistant emphasizing zero cloud dependency and maximum user data privacy. Runs entirely on-device with no data ever leaving the machine.',
+      tags: ['AI/ML', 'Privacy', 'Local LLM', 'Python'],
+      color: '#00F2FE',
+      category: 'Software',
+    },
+    {
+      id: 'proj-2',
+      title: 'IoT Weather & Air Quality Station',
+      shortDesc: 'Cloud-connected environmental monitoring system.',
+      description: 'Designed hardware architecture for a cloud-connected microcontroller system to dynamically track and report real-time environmental metrics including weather and air quality indices.',
+      tags: ['IoT', 'ESP32', 'Cloud', 'Sensors', 'MQTT'],
+      color: '#9B51E0',
+      category: 'Hardware',
+    },
+    {
+      id: 'proj-3',
+      title: 'EV-Grama Vision',
+      shortDesc: 'Rural EV charging network with AI pricing.',
+      description: 'Designed system architecture for a community-driven EV charging locator featuring map-based discovery, automated booking logic, and dynamic AI surge pricing for rural areas.',
+      tags: ['Maps API', 'AI Pricing', 'Mobile', 'System Design'],
+      color: '#00F2FE',
+      category: 'Software',
+    },
+    {
+      id: 'proj-4',
+      title: 'Gesture-Based Wheelchair Controller',
+      shortDesc: 'Arduino navigation system for accessibility.',
+      description: 'Developed hardware logic for Arduino-based prototypes including IR-sensor traffic optimizers and embedded wheelchair navigation systems for individuals with physiological disorders.',
+      tags: ['Arduino', 'IR Sensors', 'Embedded', 'Accessibility'],
+      color: '#9B51E0',
+      category: 'Hardware',
+    },
+    {
+      id: 'proj-5',
+      title: 'Jan-Aushadhi Finder App',
+      shortDesc: 'Generic medicine price comparison mobile app.',
+      description: 'Architected and rapidly prototyped a mobile application mapping generic medicine alternatives, featuring real-time price comparisons and dynamic savings calculators.',
+      tags: ['Android Studio', 'Mobile', 'Healthcare', 'React Native'],
+      color: '#00F2FE',
+      category: 'Mobile',
+    },
+    {
+      id: 'proj-6',
+      title: '1FS Studio Digital Storefront',
+      shortDesc: 'Premium camera rental & photography platform.',
+      description: 'Developed a premium, responsive digital storefront bridging top-tier camera rentals with professional photoshoot packages, emphasizing fluid UI animations and seamless booking flow.',
+      tags: ['React', 'Tailwind', 'UI/UX', 'Animations'],
+      color: '#9B51E0',
+      category: 'Web',
+    },
+    {
+      id: 'proj-7',
+      title: 'HemiTyping Engine',
+      shortDesc: 'Hyper-smooth web-based typing experience.',
+      description: 'Designed core logic and interface for a dynamic web-based typing engine featuring hyper-smooth visual effects, electric UI components, and real-time performance metrics.',
+      tags: ['JavaScript', 'Canvas', 'Performance', 'UI'],
+      color: '#00F2FE',
+      category: 'Web',
+    },
+    {
+      id: 'proj-8',
+      title: 'FinTrack Elite',
+      shortDesc: 'AI-powered financial dashboard.',
+      description: 'Conceptualised and deployed a responsive financial dashboard utilising AI-assisted workflows to rapidly build dynamic modules for managing net worth, wallets, subscriptions, loans, and trips.',
+      tags: ['React', 'AI', 'Dashboard', 'Finance'],
+      color: '#9B51E0',
+      category: 'Web',
+    },
+    {
+      id: 'proj-9',
+      title: 'HemiToolkit Utilities',
+      shortDesc: 'Zero-server client-side utility suite.',
+      description: 'Architected a comprehensive suite of client-side utility tools featuring a strict zero-server-upload architecture for absolute data security and privacy.',
+      tags: ['JavaScript', 'Privacy', 'Utilities', 'PWA'],
+      color: '#00F2FE',
+      category: 'Web',
+    },
+  ],
+
+  certifications: [
+    {
+      id: 'cert-1',
+      title: 'Industrial Automation (PLC, SCADA, IoT, Mechatronics)',
+      org: 'Government Tool Room and Training Centre (GTTC)',
+      period: 'Feb 2026 – May 2026',
+    },
+    {
+      id: 'cert-2',
+      title: 'PCB Assembly and Testing',
+      org: 'Semi-Pro Technology',
+      period: 'Mar 2023 – Jun 2023',
+    },
+    {
+      id: 'cert-3',
+      title: 'Introduction to Robotic Process Automation (RPA)',
+      org: 'Infosys Springboard',
+      period: 'Jan 2023',
+    },
+    {
+      id: 'cert-4',
+      title: 'Appium — Mobile Automation Overview',
+      org: 'Infosys Springboard',
+      period: 'Jan 2023',
+    },
+    {
+      id: 'cert-5',
+      title: 'PCB Designing and Fabrication',
+      org: 'Indian Tech Keys',
+      period: 'Jul 2022',
+    },
+  ],
+};
