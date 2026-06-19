@@ -301,3 +301,50 @@ html.glow-away .glow-main {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Modern Animated Logo */
+.animated-logo {
+  position: relative;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.animated-logo::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent 0%, transparent 30%, #7b3fe4 50%, #d946ef 70%, transparent 100%);
+  animation: logo-spin 3s linear infinite;
+  z-index: 0;
+}
+
+.animated-logo-inner {
+  position: absolute;
+  inset: 2px;
+  background: var(--bg-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  background-clip: text;
+  color: var(--text-main);
+  transition: all 0.3s ease;
+}
+
+.animated-logo:hover .animated-logo-inner {
+  background: linear-gradient(135deg, rgba(123, 63, 228, 1), rgba(217, 70, 239, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes logo-spin {
+  100% { transform: rotate(360deg); }
+}

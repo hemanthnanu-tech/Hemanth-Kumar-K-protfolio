@@ -13,9 +13,14 @@ export const Nav = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="relative z-20 flex items-center justify-between px-6 md:px-12 lg:px-20 py-8"
     >
-      <div className="text-2xl font-semibold tracking-tight text-[var(--text-main)] flex items-center">
-        Hemanth<sup className="text-sm font-normal ml-0.5">®</sup>
-      </div>
+      <a href="#home" className="flex items-center gap-3 group">
+        <div className="w-10 h-10 animated-logo shadow-md group-hover:scale-105 transition-transform duration-300">
+          <div className="animated-logo-inner">H</div>
+        </div>
+        <div className="text-2xl font-semibold tracking-tight text-[var(--text-main)] flex items-center group-hover:hover-colourful-text transition-colors duration-300">
+          Hemanth<sup className="text-sm font-normal ml-0.5">®</sup>
+        </div>
+      </a>
       
       <div className="hidden md:flex items-center gap-10 text-[13px] font-medium text-[var(--text-muted)]">
         <a href="#portfolio" className="nav-link">Portfolio</a>
