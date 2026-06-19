@@ -16,10 +16,12 @@
   --btn-border: rgba(0, 0, 0, 0.1);
   --btn-hover-bg: rgba(255, 255, 255, 0.9);
   
-  /* Increased glow visibility for light mode */
-  --glow-core: rgba(123, 63, 228, 0.35);
-  --glow-mid: rgba(217, 70, 239, 0.15);
-  --glow-outer: rgba(68, 17, 138, 0.05);
+  /* Increased glow visibility and massive size for light mode */
+  --glow-core: rgba(123, 63, 228, 0.45);
+  --glow-mid: rgba(217, 70, 239, 0.25);
+  --glow-outer: rgba(68, 17, 138, 0.1);
+  --glow-width: 140vw;
+  --glow-height: 140vh;
   
   --heading-gradient-from: #000000;
   --heading-gradient-to: #666666;
@@ -46,6 +48,8 @@ html.dark {
   --glow-core: rgba(255, 255, 255, 0.25);
   --glow-mid: rgba(176, 106, 255, 0.45);
   --glow-outer: rgba(68, 17, 138, 0.6);
+  --glow-width: 90vw;
+  --glow-height: 80vh;
   
   --heading-gradient-from: #FFFFFF;
   --heading-gradient-to: #B4A9C4;
@@ -90,8 +94,8 @@ body {
   top: var(--mouse-y, 50%);
   left: var(--mouse-x, 50%);
   transform: translate(-50%, -50%) scale(1);
-  width: 90vw; /* 20% smaller */
-  height: 80vh; /* 20% smaller */
+  width: var(--glow-width);
+  height: var(--glow-height);
   background: radial-gradient(
     circle, 
     var(--glow-core) 0%, 
@@ -101,20 +105,21 @@ body {
   );
   filter: blur(80px);
   opacity: 1;
-  transition: top 1.2s cubic-bezier(0.1, 0.8, 0.2, 1), 
-              left 1.2s cubic-bezier(0.1, 0.8, 0.2, 1), 
-              transform 0.8s ease, 
-              opacity 0.8s ease, 
+  transition: top 1.5s cubic-bezier(0.1, 0.8, 0.2, 1), 
+              left 1.5s cubic-bezier(0.1, 0.8, 0.2, 1), 
+              transform 1s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              opacity 1s ease, 
               background 0.5s ease;
 }
 
-/* Make colour float away (diffuse and fade) when cursor hovers over glass panels or links */
+/* Make colour float away (dissipate smoothly) when cursor hovers over glass panels or links */
 body:has(.glass-panel:hover) .glow-main,
 body:has(a:hover) .glow-main,
 body:has(button:hover) .glow-main,
 body:has(.group:hover) .glow-main {
-  transform: translate(-50%, -50%) scale(1.8);
-  opacity: 0.15;
+  transform: translate(-50%, -50%) scale(0.3);
+  opacity: 0;
+  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease;
 }
 
 /* Nav Links */
