@@ -79,23 +79,36 @@ body {
   z-index: 0;
 }
 
-/* The interactive glow - Removed transition on top/left for butter-smooth tracking */
+/* The interactive glow - Added smooth transition for floating effect */
 .glow-main {
   position: absolute;
-  top: var(--mouse-y, 80%);
+  top: var(--mouse-y, 50%);
   left: var(--mouse-x, 50%);
-  transform: translate(-50%, -50%);
-  width: 120vw;
-  height: 110vh;
+  transform: translate(-50%, -50%) scale(1);
+  width: 90vw; /* 20% smaller */
+  height: 80vh; /* 20% smaller */
   background: radial-gradient(
     circle, 
     var(--glow-core) 0%, 
-    var(--glow-mid) 25%, 
-    var(--glow-outer) 50%, 
-    transparent 75%
+    var(--glow-mid) 15%, 
+    var(--glow-outer) 35%, 
+    transparent 60%
   );
-  filter: blur(100px);
-  transition: background 0.5s ease; 
+  filter: blur(80px);
+  opacity: 1;
+  transition: top 1.2s cubic-bezier(0.1, 0.8, 0.2, 1), 
+              left 1.2s cubic-bezier(0.1, 0.8, 0.2, 1), 
+              transform 0.8s ease, 
+              opacity 0.8s ease, 
+              background 0.5s ease;
+}
+
+/* Make colour float away (diffuse and fade) when cursor hovers over glass panels or links */
+body:has(.glass-panel:hover) .glow-main,
+body:has(a:hover) .glow-main,
+body:has(button:hover) .glow-main {
+  transform: translate(-50%, -50%) scale(1.8);
+  opacity: 0.15;
 }
 
 /* Nav Links */
