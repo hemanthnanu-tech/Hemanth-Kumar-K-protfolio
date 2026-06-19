@@ -14,7 +14,7 @@ const SOFTWARE_PROJECTS = [
     id: 's1', title: '1fs-studio-website',
     desc: 'A premium digital storefront for 1FS Photography, bridging top-tier camera and gimbal rentals with professional photoshoot packages.',
     tags: ['React', 'TypeScript', 'Tailwind'],
-    colSpan: 'md:col-span-2 lg:col-span-2',
+    colSpan: 'md:col-span-1 lg:col-span-1',
     link: 'https://hemanthnanu-tech.github.io/1fs-studio-website/'
   },
   {
@@ -28,7 +28,7 @@ const SOFTWARE_PROJECTS = [
     id: 's3', title: 'Jan-Aushadhi-Finder',
     desc: 'A specialized Android application designed to make healthcare more accessible and affordable. Allows users to quickly search for generic alternatives.',
     tags: ['Kotlin', 'Android', 'Healthcare'],
-    colSpan: 'md:col-span-1 lg:col-span-1',
+    colSpan: 'md:col-span-2 lg:col-span-2',
     link: 'https://github.com/hemanthnanu-tech/Jan-Aushadhi-Finder'
   },
   {
@@ -42,14 +42,14 @@ const SOFTWARE_PROJECTS = [
     id: 's5', title: 'HemiToolkit',
     desc: 'HemiToolkit Utilities. Perfected. Professional, client-side tools. Zero server uploads. All tools in one place.',
     tags: ['TypeScript', 'Utilities', 'Client-Side'],
-    colSpan: 'md:col-span-2 lg:col-span-2',
+    colSpan: 'md:col-span-1 lg:col-span-1',
     link: 'https://hemanthnanu-tech.github.io/HemiToolkit/'
   },
   {
     id: 's6', title: 'HemiTyping',
     desc: 'A futuristic typing engine packed with fluid animations, hyper-smooth effects, electric UI, and dynamic challenges.',
     tags: ['JavaScript', 'Typing Engine'],
-    colSpan: 'md:col-span-1 lg:col-span-1',
+    colSpan: 'md:col-span-3 lg:col-span-3',
     link: 'https://hemanthnanu-tech.github.io/HemiTyping/'
   },
 ];

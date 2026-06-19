@@ -92,7 +92,7 @@ export const Contact = () => {
                           {item.icon}
                         </div>
                         <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 scale-0 group-hover:scale-100">
-                          <img src={item.hoverUrl} alt="icon" className="w-5 h-5 object-contain" />
+                          <img src={item.hoverUrl} alt="icon" className={`w-5 h-5 object-contain ${item.hoverUrl.includes('github') ? 'invert-dark' : ''}`} />
                         </div>
                       </div>
                       <span className="font-medium text-sm sm:text-base truncate">{item.text}</span>
@@ -104,7 +104,7 @@ export const Contact = () => {
                           {item.icon}
                         </div>
                         <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 scale-0 group-hover:scale-100">
-                          <img src={item.hoverUrl} alt="icon" className="w-5 h-5 object-contain" />
+                          <img src={item.hoverUrl} alt="icon" className={`w-5 h-5 object-contain ${item.hoverUrl.includes('github') ? 'invert-dark' : ''}`} />
                         </div>
                       </div>
                       <span className="font-medium text-sm sm:text-base truncate group-hover:text-[var(--accent)] transition-colors">{item.text}</span>

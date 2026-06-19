@@ -62,6 +62,10 @@ html {
   scroll-behavior: smooth;
 }
 
+[data-theme="dark"] .invert-dark {
+  filter: invert(1) brightness(2);
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-main);
