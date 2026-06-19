@@ -128,9 +128,9 @@ export const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="glass-panel h-full flex flex-col"
+            className="glass-panel lg:mt-20 h-fit"
           >
-            <form onSubmit={handleSubmit} className="flex flex-col gap-6 h-full">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <input 
                   type="text" 
@@ -150,9 +150,10 @@ export const Contact = () => {
                 />
               </div>
               <textarea 
+                rows={6}
                 placeholder="Tell me about your project or inquiry..." 
                 required 
-                className="input-glass resize-none flex-grow min-h-[150px]"
+                className="input-glass resize-none"
                 value={form.message}
                 onChange={e => setForm(p => ({ ...p, message: e.target.value }))}
               />
