@@ -42,9 +42,12 @@ export const Hero = () => {
         </motion.div>
         
         {/* Main Title */}
-        <motion.h1 variants={fadeIn} className="font-display text-[clamp(2.5rem,7vw,6.5rem)] leading-[1.0] font-semibold tracking-[-0.03em] mb-6 text-[var(--text-main)] drop-shadow-sm">
-          Architecting<br />
-          Next-Generation<br />
+        <motion.h1 
+          variants={fadeIn} 
+          className="text-[clamp(2.5rem,6vw,6.5rem)] leading-[1.05] font-semibold tracking-[-0.02em] mb-6 text-[var(--text-main)] drop-shadow-sm"
+          style={{ fontFamily: "'Playfair Display', serif" }}
+        >
+          Architecting Next-Generation<br />
           Embedded Solutions
         </motion.h1>
         

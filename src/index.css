@@ -16,9 +16,10 @@
   --btn-border: rgba(0, 0, 0, 0.1);
   --btn-hover-bg: rgba(255, 255, 255, 0.9);
   
-  --glow-core: rgba(123, 63, 228, 0.15);
-  --glow-mid: rgba(217, 70, 239, 0.08);
-  --glow-outer: rgba(68, 17, 138, 0.03);
+  /* Dramatically increased visibility for light mode glow */
+  --glow-core: rgba(123, 63, 228, 0.65);
+  --glow-mid: rgba(217, 70, 239, 0.35);
+  --glow-outer: rgba(68, 17, 138, 0.15);
   
   --heading-gradient-from: #000000;
   --heading-gradient-to: #666666;
