@@ -26,8 +26,8 @@
   --heading-gradient-from: #000000;
   --heading-gradient-to: #666666;
   
-  /* Soft Premium Purple */
-  --accent: #7B3FE4; 
+  /* Strictly Black for Light Mode */
+  --accent: #000000; 
 }
 
 html.dark {
@@ -54,12 +54,17 @@ html.dark {
   --heading-gradient-from: #FFFFFF;
   --heading-gradient-to: #B4A9C4;
   
-  /* Soft Premium Pink/Purple */
-  --accent: #D946EF; 
+  /* Strictly White for Dark Mode */
+  --accent: #FFFFFF; 
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Grayscale all images and SVGs */
+img, svg {
+  filter: grayscale(100%);
 }
 
 body {

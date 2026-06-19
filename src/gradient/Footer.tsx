@@ -6,7 +6,7 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         
         <div className="text-xl font-semibold tracking-tight text-[var(--text-main)] flex items-center">
-          Hemanth<sup className="text-xs font-normal ml-0.5 text-[#D946EF]">®</sup>
+          Hemanth<sup className="text-xs font-normal ml-0.5 text-[var(--accent)]">®</sup>
         </div>
 
         <div className="text-[13px] text-[var(--text-muted)]">

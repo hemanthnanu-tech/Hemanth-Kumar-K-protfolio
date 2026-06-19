@@ -74,12 +74,12 @@ export const Experience = () => {
               <div className="w-full md:w-1/2 flex flex-col relative">
                 <div className="flex justify-between items-start mb-6">
                   <div>
-                    <h4 className="text-xl md:text-2xl font-medium text-[#D946EF] mb-2">{exp.role}</h4>
+                    <h4 className="text-xl md:text-2xl font-medium text-[var(--accent)] mb-2">{exp.role}</h4>
                     <div className="flex items-center gap-1 text-[14px] text-[var(--text-muted)]">
                       <MapPin size={14} /> {exp.location}
                     </div>
                   </div>
-                  <div className="w-12 h-12 rounded-full border border-[var(--panel-border)] flex items-center justify-center text-[var(--text-muted)] group-hover:bg-[#7B3FE4] group-hover:text-white group-hover:border-[#7B3FE4] transition-all duration-300 transform group-hover:rotate-45">
+                  <div className="w-12 h-12 rounded-full border border-[var(--panel-border)] flex items-center justify-center text-[var(--text-muted)] group-hover:bg-[var(--accent)] group-hover:text-[var(--bg-color)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:rotate-45">
                     <ArrowUpRight size={20} />
                   </div>
                 </div>
@@ -103,7 +103,7 @@ export const Experience = () => {
                       </div>
                       <div className="flex flex-wrap gap-2 pb-2">
                         {exp.tags.map(t => (
-                          <span key={t} className="px-3 py-1 text-[11px] font-mono tracking-wider text-[#7B3FE4] uppercase bg-[var(--btn-bg)] border border-[var(--panel-border)] rounded-full">
+                          <span key={t} className="px-3 py-1 text-[11px] font-mono tracking-wider text-[var(--accent)] uppercase bg-[var(--btn-bg)] border border-[var(--panel-border)] rounded-full">
                             {t}
                           </span>
                         ))}
