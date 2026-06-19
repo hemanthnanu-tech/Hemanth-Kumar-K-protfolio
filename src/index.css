@@ -278,28 +278,3 @@ html.glow-away .glow-main {
 .input-glass::placeholder {
   color: var(--text-muted);
 }
-
-/* Colourful Hover Effect */
-.hover-colourful {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hover-colourful:hover {
-  background: linear-gradient(135deg, rgba(123, 63, 228, 0.8), rgba(217, 70, 239, 0.8)) !important;
-  color: #FFFFFF !important;
-  border-color: transparent !important;
-  box-shadow: 0 10px 25px rgba(217, 70, 239, 0.4) !important;
-  transform: translateY(-2px) scale(1.05) !important;
-}
-
-.hover-colourful-text {
-  transition: all 0.4s ease;
-}
-
-.hover-colourful-text:hover {
-  background: linear-gradient(135deg, rgba(123, 63, 228, 1), rgba(217, 70, 239, 1));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-

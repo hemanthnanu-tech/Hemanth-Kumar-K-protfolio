@@ -50,10 +50,33 @@ export const Contact = () => {
 
             <div className="space-y-6">
               {[
-                { icon: <Mail size={18} />, text: 'hemanth2678nanu@gmail.com', href: 'mailto:hemanth2678nanu@gmail.com' },
-                { icon: <Phone size={18} />, text: '+91 9538520031', href: 'tel:+919538520031' },
-                { icon: <Github size={18} />, text: 'github.com/hemanthnanu-tech', href: 'https://github.com/hemanthnanu-tech' },
-                { icon: <MapPin size={18} />, text: 'Bangalore, Karnataka, India' },
+                { 
+                  icon: <Mail size={18} />, 
+                  hoverUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg',
+                  text: 'hemanth2678nanu@gmail.com', 
+                  href: 'mailto:hemanth2678nanu@gmail.com',
+                  hoverBorder: 'group-hover:border-[#EA4335] group-hover:shadow-[0_0_15px_#EA433530]'
+                },
+                { 
+                  icon: <Phone size={18} />, 
+                  hoverUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg',
+                  text: '+91 9538520031', 
+                  href: 'tel:+919538520031',
+                  hoverBorder: 'group-hover:border-[#25D366] group-hover:shadow-[0_0_15px_#25D36630]'
+                },
+                { 
+                  icon: <Github size={18} />, 
+                  hoverUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg',
+                  text: 'github.com/hemanthnanu-tech', 
+                  href: 'https://github.com/hemanthnanu-tech',
+                  hoverBorder: 'group-hover:border-[#888888] group-hover:shadow-[0_0_15px_#88888830]'
+                },
+                { 
+                  icon: <MapPin size={18} />, 
+                  hoverUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg',
+                  text: 'Bangalore, Karnataka, India',
+                  hoverBorder: 'group-hover:border-[#4285F4] group-hover:shadow-[0_0_15px_#4285F430]'
+                },
               ].map((item, i) => (
                 <motion.div 
                   key={item.text}
@@ -63,18 +86,28 @@ export const Contact = () => {
                   transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
                 >
                   {item.href ? (
-                    <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className="flex items-center gap-4 text-[var(--text-main)] group w-fit">
-                      <div className="w-12 h-12 rounded-full border border-[var(--panel-border)] bg-[var(--btn-bg)] flex items-center justify-center hover-colourful transition-colors">
-                        {item.icon}
+                    <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className="flex items-center gap-3 sm:gap-4 text-[var(--text-main)] hover:text-[var(--accent)] transition-colors group w-full max-w-full">
+                      <div className={`shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[var(--panel-border)] bg-[var(--btn-bg)] flex items-center justify-center transition-all duration-300 relative overflow-hidden ${item.hoverBorder}`}>
+                        <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-0">
+                          {item.icon}
+                        </div>
+                        <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 scale-0 group-hover:scale-100">
+                          <img src={item.hoverUrl} alt="icon" className="w-5 h-5 object-contain" />
+                        </div>
                       </div>
-                      <span className="font-medium hover-colourful-text">{item.text}</span>
+                      <span className="font-medium text-sm sm:text-base truncate">{item.text}</span>
                     </a>
                   ) : (
-                    <div className="flex items-center gap-4 text-[var(--text-main)] group w-fit">
-                      <div className="w-12 h-12 rounded-full border border-[var(--panel-border)] bg-[var(--btn-bg)] flex items-center justify-center hover-colourful transition-colors cursor-default">
-                        {item.icon}
+                    <div className="flex items-center gap-3 sm:gap-4 text-[var(--text-main)] group w-full max-w-full cursor-default">
+                      <div className={`shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[var(--panel-border)] bg-[var(--btn-bg)] flex items-center justify-center transition-all duration-300 relative overflow-hidden ${item.hoverBorder}`}>
+                        <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-0">
+                          {item.icon}
+                        </div>
+                        <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 scale-0 group-hover:scale-100">
+                          <img src={item.hoverUrl} alt="icon" className="w-5 h-5 object-contain" />
+                        </div>
                       </div>
-                      <span className="font-medium hover-colourful-text">{item.text}</span>
+                      <span className="font-medium text-sm sm:text-base truncate group-hover:text-[var(--accent)] transition-colors">{item.text}</span>
                     </div>
                   )}
                 </motion.div>
@@ -117,7 +150,7 @@ export const Contact = () => {
                 value={form.message}
                 onChange={e => setForm(p => ({ ...p, message: e.target.value }))}
               />
-              <button type="submit" className="btn-hero hover-colourful w-full py-4 mt-2 text-[15px]">
+              <button type="submit" className="btn-hero w-full py-4 mt-2 text-[15px]">
                 Send Message <Send size={16} className="ml-2" />
               </button>
             </form>
