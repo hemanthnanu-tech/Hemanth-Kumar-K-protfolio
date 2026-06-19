@@ -4,6 +4,13 @@ import { motion } from 'motion/react';
 
 const SOFTWARE_PROJECTS = [
   {
+    id: 'h1', title: 'Offline AI Assistant',
+    desc: 'Engineered a completely offline, locally-executed AI assistant emphasizing zero cloud dependency and maximum user data privacy.',
+    tags: ['AI/ML', 'Privacy', 'Local Execution'],
+    colSpan: 'md:col-span-2 lg:col-span-2',
+    link: 'https://github.com/hemanthnanu-tech/Offline-AI-Assistant'
+  },
+  {
     id: 's1', title: '1fs-studio-website',
     desc: 'A premium digital storefront for 1FS Photography, bridging top-tier camera and gimbal rentals with professional photoshoot packages.',
     tags: ['React', 'TypeScript', 'Tailwind'],
@@ -49,13 +56,6 @@ const SOFTWARE_PROJECTS = [
 
 const HARDWARE_PROJECTS = [
   {
-    id: 'h1', title: 'Offline AI Assistant',
-    desc: 'Engineered a completely offline, locally-executed AI assistant emphasizing zero cloud dependency and maximum user data privacy.',
-    tags: ['AI/ML', 'Privacy', 'Local Execution'],
-    colSpan: 'md:col-span-2 lg:col-span-2',
-    link: 'https://github.com/hemanthnanu-tech/Offline-AI-Assistant'
-  },
-  {
     id: 'h2', title: 'IoT Weather & Air Quality',
     desc: 'Designed hardware architecture for a cloud-connected microcontroller system dynamically tracking real-time environmental metrics.',
     tags: ['Hardware', 'IoT', 'Sensors'],
@@ -86,7 +86,7 @@ const ProjectCard = ({ proj, index }: { proj: any, index: number }) => (
       <div className="text-[50px] font-light text-[var(--text-main)] opacity-10 leading-none group-hover:opacity-20 transition-opacity font-display">
         {String(index + 1).padStart(2, '0')}
       </div>
-      <div className="w-12 h-12 rounded-full bg-[var(--btn-bg)] border border-[var(--panel-border)] flex items-center justify-center text-[var(--text-main)] group-hover:bg-[var(--accent)] group-hover:text-white transition-all cursor-pointer z-10">
+      <div className="w-12 h-12 rounded-full bg-[var(--btn-bg)] border border-[var(--panel-border)] flex items-center justify-center text-[var(--text-main)] group-hover:bg-[var(--accent)] group-hover:text-[var(--bg-color)] transition-all cursor-pointer z-10">
         <ArrowUpRight size={20} />
       </div>
     </div>
