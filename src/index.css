@@ -62,7 +62,7 @@ html {
   scroll-behavior: smooth;
 }
 
-[data-theme="dark"] .invert-dark {
+.dark .invert-dark {
   filter: invert(1) brightness(2);
 }
 
