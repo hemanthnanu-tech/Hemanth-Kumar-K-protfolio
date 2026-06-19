@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 const EDUCATION = [
   { id: 'e1', inst: 'JSS Academy of Technical Education', degree: 'B.E. — Electronics & Communication', period: '2023–2026', loc: 'Bangalore' },
   { id: 'e2', inst: 'PVP Polytechnic, Dr. AIT Campus', degree: 'Diploma — Electronics & Communication', period: '2020-2023', loc: 'Bengaluru' },
-  { id: 'e3', inst: 'Stella Marys High School', degree: 'SSLC', period: '2020', loc: 'Bangalore' },
+  { id: 'e3', inst: 'Vikas Central School', degree: 'SSLC', period: '2020', loc: 'Bangalore' },
 ];
 
 export const About = () => {
@@ -62,7 +62,7 @@ export const About = () => {
           >
             <div className="flex items-center gap-3 mb-8">
               <GraduationCap className="text-[var(--accent)]" size={24} />
-              <h3 className="text-2xl font-medium text-[var(--text-main)] tracking-tight">Education & Certifications</h3>
+              <h3 className="section-heading !text-2xl !mb-0 tracking-tight">Education</h3>
             </div>
             
             <div className="space-y-6 relative z-10">
@@ -80,12 +80,12 @@ export const About = () => {
                 <p className="text-[13px] text-[var(--text-muted)]">Diploma in Electronics and Communication Engineering</p>
               </a>
 
-              <div className="relative pl-6 border-l border-[var(--panel-border)]">
-                <div className="absolute left-[-5px] top-1.5 w-2 h-2 rounded-full bg-[var(--accent)]" />
+              <a href="https://drive.google.com/file/d/1LRT9r32hIIDarA_PAnANrA9mjY3UPsbH/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="relative pl-6 border-l border-[var(--panel-border)] block group cursor-pointer">
+                <div className="absolute left-[-5px] top-1.5 w-2 h-2 rounded-full bg-[var(--accent)] group-hover:scale-150 transition-transform" />
                 <div className="text-[12px] text-[var(--text-muted)] font-mono tracking-wider mb-1 uppercase">2020 • Bangalore</div>
-                <h4 className="text-[16px] font-medium text-[var(--text-main)] mb-0.5">Vikas Central School</h4>
+                <h4 className="text-[16px] font-medium text-[var(--text-main)] mb-0.5 group-hover:text-[var(--accent)] transition-colors">Vikas Central School</h4>
                 <p className="text-[13px] text-[var(--text-muted)]">Secondary School Leaving Certificate (SSLC)</p>
-              </div>
+              </a>
             </div>
           </motion.div>
           
