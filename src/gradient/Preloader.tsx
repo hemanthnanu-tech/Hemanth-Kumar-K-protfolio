@@ -17,7 +17,7 @@ const FONTS = [
   "'Times New Roman', serif",
   "'Arial Black', sans-serif",
   "'Brush Script MT', cursive",
-  "'Outfit', sans-serif" // Final premium font
+  "'Great Vibes', cursive" // Final signature font
 ];
 
 export const Preloader = ({ loading, onComplete }: { loading: boolean, onComplete: () => void }) => {
