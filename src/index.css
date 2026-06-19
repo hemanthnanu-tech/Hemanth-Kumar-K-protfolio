@@ -117,11 +117,8 @@ body {
               background 0.5s ease;
 }
 
-/* Make colour float away (dissipate smoothly) when cursor hovers over glass panels or links */
-body:has(.glass-panel:hover) .glow-main,
-body:has(a:hover) .glow-main,
-body:has(button:hover) .glow-main,
-body:has(.group:hover) .glow-main {
+/* Make colour float away (dissipate smoothly) when cursor hovers over interactive elements */
+html.glow-away .glow-main {
   transform: translate(-50%, -50%) scale(0.3);
   opacity: 0;
   transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease;

@@ -22,9 +22,23 @@ const AppContent = () => {
       document.documentElement.style.setProperty('--mouse-x', `${x}%`);
       document.documentElement.style.setProperty('--mouse-y', `${y}%`);
     };
+
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target && target.closest && target.closest('a, button, .glass-panel, .group, .cursor-pointer')) {
+        document.documentElement.classList.add('glow-away');
+      } else {
+        document.documentElement.classList.remove('glow-away');
+      }
+    };
     
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseover', handleMouseOver);
+    
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseover', handleMouseOver);
+    };
   }, []);
 
   return (
