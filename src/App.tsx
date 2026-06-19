@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ThemeProvider } from './gradient/ThemeProvider';
 import { MouseTrail } from './gradient/MouseTrail';
 import { Nav } from './gradient/Nav';
@@ -10,6 +10,7 @@ import { Projects } from './gradient/Projects';
 import { Certifications } from './gradient/Certifications';
 import { Contact } from './gradient/Contact';
 import { Footer } from './gradient/Footer';
+import { Preloader } from './gradient/Preloader';
 
 const AppContent = () => {
   useEffect(() => {
@@ -41,9 +42,16 @@ const AppContent = () => {
 };
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
   return (
     <ThemeProvider>
-      <AppContent />
+      {loading && <Preloader onComplete={() => setLoading(false)} />}
+      
+      {/* Hide the scrollbar and prevent interaction while loading */}
+      <div className={loading ? "fixed inset-0 overflow-hidden" : ""}>
+        <AppContent />
+      </div>
     </ThemeProvider>
   );
 }
